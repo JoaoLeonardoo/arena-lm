@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena LM</title>
+    <!-- Inclui o Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1280px;
+        }
+        .header-bg {
+            background-image: url('https://placehold.co/1280x600/1e293b/ffffff?text=Arena+LM');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Estilos para a transição suave */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s ease-out; /* Alterado para 0.8s para uma transição mais lenta */
+        }
+
+        .faq-answer.open {
+            max-height: 200px; /* Ajuste este valor se a resposta for muito longa */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Seção do Cabeçalho (Hero) -->
+    <header class="header-bg relative flex flex-col items-center justify-center text-center py-20 lg:py-40 rounded-b-3xl shadow-xl">
+        <div class="absolute inset-0 bg-black opacity-60 rounded-b-3xl"></div>
+        <div class="z-10 px-4">
+            <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight mb-4 animate-fade-in-down">
+                Arena LM
+            </h1>
+            <p class="text-lg lg:text-xl mb-8 font-light animate-fade-in-down">
+                Sua saúde e bem-estar em primeiro lugar!
+            </p>
+            <a href="#planos" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg animate-fade-in-up">
+                Confira nossos planos!
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Seção de Vantagens -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">Por que escolher a Arena LM?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vantagem 1 -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center w-12 h-12 bg-red-600 rounded-full mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 015.618 1.04A12.002 12.002 0 0120.944 12a11.955 11.955 0 01-1.04 5.618A12.002 12.002 0 0112 20.944a11.955 11.955 0 01-5.618-1.04A12.002 12.002 0 013.056 12a11.955 11.955 0 011.04-5.618z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Saúde e Bem-Estar</h3>
+                    <p class="text-gray-400">Focamos em sua saúde integral, com treinos personalizados para alcançar seus objetivos.</p>
+                </div>
+                <!-- Vantagem 2 -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center w-12 h-12 bg-red-600 rounded-full mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-3.5a2 2 0 00-2-2H17v5zM4 14V8a2 2 0 012-2h10l-3 3-3-3m0 0l-3 3-3-3H4v6a2 2 0 002 2h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Excelentes Profissionais</h3>
+                    <p class="text-gray-400">Nossa equipe é formada por profissionais qualificados e dedicados a te ajudar em cada passo.</p>
+                </div>
+                <!-- Vantagem 3 -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-105">
+                    <div class="flex items-center justify-center w-12 h-12 bg-red-600 rounded-full mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 .895-2 3-2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14c-1.657 0-3-.895-3-2s1.343-2 3-2 3 .895 3 2-1.343 2-3 2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20s-1.657-.895-3-2c-1.343-1.105-3-2-3-2V4c0-1.105.895-2 2-2h12c1.105 0 2 .895 2 2v14s-1.657.895-3 2c-1.343 1.105-3 2-3 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Ambiente Moderno</h3>
+                    <p class="text-gray-400">Equipamentos de última geração para um treino mais eficiente e completo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Aulas da Semana -->
+        <section id="aulas" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">Aulas da Semana</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <!-- Aula de Funcional -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-red-500">Funcional</h3>
+                    <p class="text-lg text-gray-400">Segunda e Quarta</p>
+                    <p class="text-lg text-gray-400">19:00 - 20:00</p>
+                </div>
+                <!-- Aula de Fit Dance -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-red-500">Fit Dance</h3>
+                    <p class="text-lg text-gray-400">Terça e Quinta</p>
+                    <p class="text-lg text-gray-400">20:00 - 21:00</p>
+                </div>
+                <!-- Aula de Forró -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-red-500">Forró</h3>
+                    <p class="text-lg text-gray-400">Terça e Sexta</p>
+                    <p class="text-lg text-gray-400">19:00 - 20:00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Planos -->
+        <section id="planos" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">Nossos Planos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Plano de Musculação -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Musculação</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 70,00</p>
+                    <p class="text-gray-400 text-center mb-4">Inclui: Esteira + Fit Dance</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20Musculação%20no%20valor%20de%20R%24%2070%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+                <!-- Plano de Funcional -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Funcional</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 45,00</p>
+                    <p class="text-gray-400 text-center mb-4">Aulas de funcional</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20Funcional%20no%20valor%20de%20R%24%2045%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+                <!-- Plano de Forró -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Forró</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 45,00</p>
+                    <p class="text-gray-400 text-center mb-4">Aulas de forró</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20Forró%20no%20valor%20de%20R%24%2045%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+                <!-- Plano de Fit Dance -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Fit Dance</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 30,00</p>
+                    <p class="text-gray-400 text-center mb-4">Aulas de fit dance</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20Fit%20Dance%20no%20valor%20de%20R%24%2030%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+                <!-- Plano de Musculação + Funcional + Forró + Fit Dance -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Combo Total</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 130,00</p>
+                    <p class="text-gray-400 text-center mb-4">Inclui: Esteira + Todas as aulas</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20Combo%20Total%20no%20valor%20de%20R%24%20130%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+                <!-- Plano de Musculação + Funcional -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Musculação + Funcional</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 100,00</p>
+                    <p class="text-gray-400 text-center mb-4">Inclui: Esteira + Fit Dance + Funcional</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20Musculação%20%2B%20Funcional%20no%20valor%20de%20R%24%20100%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+                <!-- Plano de Musculação + Forró -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Musculação + Forró</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 100,00</p>
+                    <p class="text-gray-400 text-center mb-4">Inclui: Esteira + Fit Dance + Forró</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20Musculação%20%2B%20Forró%20no%20valor%20de%20R%24%20100%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+                <!-- Plano de Forró + Fit Dance -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border-2 border-red-600">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Forró + Fit Dance</h3>
+                    <p class="text-4xl font-extrabold text-red-500 mb-2 text-center">R$ 70,00</p>
+                    <p class="text-gray-400 text-center mb-4">Inclui: Aulas de Forró e Fit Dance</p>
+                    <a href="https://wa.me/5585999517655?text=Olá!%20Tenho%20interesse%20no%20plano%20Forró%20%2B%20Fit%20Dance%20no%20valor%20de%20R%24%2070%2C00.%20Poderiam%20me%20dar%20mais%20detalhes%3F" target="_blank" class="block text-center w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-full transition duration-300">
+                        Assinar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Perguntas Frequentes (FAQ) -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">Perguntas Frequentes (FAQ)</h2>
+            <div class="max-w-3xl mx-auto">
+                <!-- Pergunta 1 -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-red-500 cursor-pointer hover:text-red-600 transition duration-300" onclick="toggleFAQ('faq-1')">A Arena LM aceita Wellhub (Gympass, TotalPass)?</h3>
+                    <div id="faq-1" class="faq-answer">
+                        <p class="text-gray-400 mt-4">Sim, aceitamos Wellhub (antigo Gympass) e TotalPass. Nossos planos e aulas estão disponíveis para todos os usuários desses aplicativos.</p>
+                    </div>
+                </div>
+                <!-- Pergunta 2 -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-red-500 cursor-pointer hover:text-red-600 transition duration-300" onclick="toggleFAQ('faq-2')">Quais as formas de pagamento disponíveis?</h3>
+                    <div id="faq-2" class="faq-answer">
+                        <p class="text-gray-400 mt-4">Aceitamos pagamento via PIX, cartão de crédito, débito e dinheiro. Fale com nossa equipe para mais detalhes sobre parcelamento.</p>
+                    </div>
+                </div>
+                <!-- Pergunta 3 -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2 text-red-500 cursor-pointer hover:text-red-600 transition duration-300" onclick="toggleFAQ('faq-3')">Preciso agendar as aulas?</h3>
+                    <div id="faq-3" class="faq-answer">
+                        <p class="text-gray-400 mt-4">Para as aulas de Funcional, Fit Dance e Forró, recomendamos agendar com antecedência para garantir sua vaga. Para musculação, não é necessário agendamento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Horários e Contato -->
+        <section id="contato" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">Horários e Contato</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center max-w-2xl mx-auto">
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-2 text-red-500">Horário de Funcionamento</h3>
+                    <p class="text-lg text-gray-400">Segunda a Sexta: 05:00 às 22:00</p>
+                    <p class="text-lg text-gray-400">Sábado: 06:00 às 16:00</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-2 text-red-500">Onde nos Encontrar</h3>
+                    <p class="text-lg text-gray-400">Rua: Dr Fernando Augusto 3828, Granja Lisboa, Fortaleza - CE, Brasil</p>
+                    <p class="text-lg text-gray-400">WhatsApp: <a href="https://wa.me/5585999517655" target="_blank" class="text-red-500 hover:underline">(85) 99951-7655</a></p>
+                    <p class="text-lg text-gray-400">Instagram: <a href="https://www.instagram.com/arenalmacademia/" target="_blank" class="text-red-500 hover:underline">@arenalmacademia</a></p>
+                    <a href="https://maps.app.goo.gl/3NUTnBKDB57XFsxV9" target="_blank" class="text-red-500 hover:underline mt-2 inline-block">Ver no Google Maps</a>
+                </div>
+                <!-- Mini mapa do Google Maps -->
+                <div class="w-full h-64 rounded-xl overflow-hidden shadow-xl">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15923.642055627618!2d-38.61863584824559!3d-3.765636069926442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75628b0304ce5%3A0x6e788812c62c9c22!2sRua%20Dr.%20Fernando%20Augusto%2C%203828%20-%20Granja%20Lisboa%2C%20Fortaleza%20-%20CE!5e0!3m2!1spt-BR!2sbr!4v1718029279586!5m2!1spt-BR!2sbr"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-950 text-gray-400 py-6 text-center rounded-t-3xl shadow-inner">
+        <p class="text-sm">&copy; 2024 Arena LM. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para mostrar ou esconder a resposta da FAQ com transição
+        function toggleFAQ(id) {
+            const answer = document.getElementById(id);
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+            } else {
+                answer.classList.add('open');
+            }
+        }
+    </script>
+</body>
+</html>
